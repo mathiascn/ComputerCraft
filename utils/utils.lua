@@ -34,7 +34,6 @@ end
 -- @param t The table (list) to search within.
 -- @return True if the item is found, otherwise false.
 function _G.inList(item, t)
-    typeCheck(item, "string", "inList")
     typeCheck(table, "table", "inList")
 
     for _, listValue in ipairs(t) do
@@ -49,7 +48,7 @@ end
 -- @param filePath The path to the Lua script file.
 -- @return The result of executing the loaded script.
 function _G.require(filePath)
-    typeCheck(filePath, "table", "printTable")
+    typeCheck(filePath, "string", "require")
 
     local file = io.open(filePath, "r")
     if not file then
